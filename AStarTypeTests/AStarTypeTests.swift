@@ -3,7 +3,7 @@ import XCTest
 
 // MARK: Test Types
 
-private struct LocationTrait: NodeType {
+private struct GeneralLocationTrait: NodeType {
 	private let location: Int
 	private let range = 0...10
 	
@@ -11,13 +11,13 @@ private struct LocationTrait: NodeType {
 		self.location = location
 	}
 	
-	private func neighbors() -> [LocationTrait] {
-		var neighbors = [LocationTrait]()
+	private func neighbors() -> [GeneralLocationTrait] {
+		var neighbors = [GeneralLocationTrait]()
 		if location > range.startIndex {
-			neighbors.append(LocationTrait(location: self.location - 1))
+			neighbors.append(GeneralLocationTrait(location: self.location - 1))
 		}
 		if location < range.endIndex {
-			neighbors.append(LocationTrait(location: self.location + 1))
+			neighbors.append(GeneralLocationTrait(location: self.location + 1))
 		}
 		return neighbors
 	}
@@ -29,12 +29,12 @@ private struct LocationTrait: NodeType {
 	}
 }
 
-private func ==(lhs: LocationTrait, rhs: LocationTrait) -> Bool {
+private func ==(lhs: GeneralLocationTrait, rhs: GeneralLocationTrait) -> Bool {
 	return lhs.location == rhs.location
 }
 
 private struct MoveAction: ActionType {
-	private typealias T = LocationTrait
+	private typealias T = GeneralLocationTrait
 	private var theType = T.self
 	private var to: T?
 	private var from: T?
@@ -69,17 +69,17 @@ class AStarTypeTests: XCTestCase {
     }
     
 	func testCalculateEmptyPath() {
-		let start = LocationTrait(location: 5)
-		let end = LocationTrait(location: 5)
-		let graphBuilder = GraphBuilder<LocationTrait>(start: start, goal: end, maxCost: 100)
+		let start = GeneralLocationTrait(location: 5)
+		let end = GeneralLocationTrait(location: 5)
+		let graphBuilder = GraphBuilder(start: start, goal: end, maxCost: 100)
 		let path = graphBuilder.calculatePath()
 		XCTAssertEqual(path!.count, 0)
 	}
 	
 	func testCalculateFullPath() {
-		let start = LocationTrait(location: 5)
-		let end = LocationTrait(location: 8)
-		let graphBuilder = GraphBuilder<LocationTrait>(start: start, goal: end, maxCost: 100)
+		let start = GeneralLocationTrait(location: 5)
+		let end = GeneralLocationTrait(location: 8)
+		let graphBuilder = GraphBuilder(start: start, goal: end, maxCost: 100)
 		let path = graphBuilder.calculatePath()
 		XCTAssertEqual(path!.last!.node.location, end.location)
 		XCTAssertEqual(path!.count, end.location - start.location)
