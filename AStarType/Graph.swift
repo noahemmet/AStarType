@@ -115,7 +115,7 @@ public struct GraphBuilder<N: NodeType where N: Equatable> {
 					ret.append(curr)
 					curr = curr.parent!.value;
 				}
-				ret.reverse()
+				return ret.reverse()
 			}
 			
 			// Normal case -- move currentNode from open to closed, process each of its neighbors.
