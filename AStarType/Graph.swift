@@ -68,6 +68,7 @@ public struct GraphPath<N:NodeType where N: Equatable> {
 	public let totalCost: Int
 	
 	public init(path: [GraphNode<N>]) {
+		print(path.count)
 		self.path = path
 		totalCost = path.reduce(0) { $0 + $1.cost }
 	}
@@ -87,7 +88,7 @@ public struct GraphBuilder<N: NodeType where N:Equatable> {
 		self.maxCost = maxCost
 	}
 	
-	public func calculatePath() -> GraphPath<N>? {
+	public func calculatePath() -> [GraphNode<N>]? {
 		var startNav = GraphNode(node: start)
 		var goalNav = GraphNode(node: goal)
 		
@@ -114,7 +115,7 @@ public struct GraphBuilder<N: NodeType where N:Equatable> {
 					ret.append(curr)
 					curr = curr.parent!.value;
 				}
-				return GraphPath(path: ret.reverse())
+				ret.reverse()
 			}
 			
 			// Normal case -- move currentNode from open to closed, process each of its neighbors.
