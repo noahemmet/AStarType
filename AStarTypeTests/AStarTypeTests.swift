@@ -3,7 +3,7 @@ import XCTest
 
 // MARK: Test Types
 
-private struct LocationTrait: NodeType, Equatable {
+private struct LocationTrait: NodeType {
 	private let location: Int
 	private let range = 0...10
 	

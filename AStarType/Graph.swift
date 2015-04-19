@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: GraphNode
 
-public class GraphNode<T:NodeType where T: Equatable>: Equatable {
+public class GraphNode<T:NodeType>: Equatable {
 	public var node: T
 	public var key: String?
 	public var parent: Box<GraphNode<T>>?
@@ -41,7 +41,7 @@ public func == <T: NodeType>(lhs: GraphNode<T>, rhs: GraphNode<T>) -> Bool {
 
 // MARK: GraphEdge
 
-public class GraphEdge<T:NodeType where T: Equatable>: Equatable {
+public class GraphEdge<T:NodeType>: Equatable {
 	public var from: GraphNode<T>
 	public var to: GraphNode<T>
 	public var weight: Int = 1
@@ -63,7 +63,7 @@ public func == <T: NodeType>(lhs: GraphEdge<T>, rhs: GraphEdge<T>) -> Bool {
 
 // MARK: GraphPath
 
-public struct GraphPath<N:NodeType where N: Equatable> {
+public struct GraphPath<N:NodeType> {
 	public let path: [GraphNode<N>]
 	public let totalCost: Int
 	
@@ -77,7 +77,7 @@ public struct GraphPath<N:NodeType where N: Equatable> {
 
 // MARK: NavGraph
 
-public struct GraphBuilder<N: NodeType where N:Equatable> {	
+public struct GraphBuilder<N: NodeType where N: Equatable> {	
 	let start: N
 	let goal: N
 	let maxCost: Int?
