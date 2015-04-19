@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: GraphNode
 
-public class GraphNode<T:NodeType>: Equatable {
+public final class GraphNode<T:NodeType>: Equatable {
 	public var node: T
 	public var key: String?
 	public var parent: Box<GraphNode<T>>?
@@ -41,7 +41,7 @@ public func == <T: NodeType>(lhs: GraphNode<T>, rhs: GraphNode<T>) -> Bool {
 
 // MARK: GraphEdge
 
-public class GraphEdge<T:NodeType>: Equatable {
+public final class GraphEdge<T:NodeType>: Equatable {
 	public var from: GraphNode<T>
 	public var to: GraphNode<T>
 	public var weight: Int = 1
