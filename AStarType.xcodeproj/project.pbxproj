@@ -10,6 +10,11 @@
 		86C4FEB61AE349AA00D0E7C9 /* AStarType.h in Headers */ = {isa = PBXBuildFile; fileRef = 86C4FEB51AE349AA00D0E7C9 /* AStarType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86C4FEBC1AE349AA00D0E7C9 /* AStarType.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C4FEB01AE349AA00D0E7C9 /* AStarType.framework */; };
 		86C4FEC31AE349AA00D0E7C9 /* AStarTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FEC21AE349AA00D0E7C9 /* AStarTypeTests.swift */; };
+		86C4FECD1AE34A1500D0E7C9 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FECC1AE34A1500D0E7C9 /* Graph.swift */; };
+		86C4FECF1AE34A5E00D0E7C9 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FECE1AE34A5E00D0E7C9 /* NodeType.swift */; };
+		86C4FED11AE34A9400D0E7C9 /* EdgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FED01AE34A9400D0E7C9 /* EdgeType.swift */; };
+		86C4FED51AE34B3800D0E7C9 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FED31AE34B3800D0E7C9 /* Box.swift */; };
+		86C4FED61AE34B3800D0E7C9 /* BoxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FED41AE34B3800D0E7C9 /* BoxType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		86C4FEBB1AE349AA00D0E7C9 /* AStarTypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AStarTypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C4FEC11AE349AA00D0E7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86C4FEC21AE349AA00D0E7C9 /* AStarTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStarTypeTests.swift; sourceTree = "<group>"; };
+		86C4FECC1AE34A1500D0E7C9 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		86C4FECE1AE34A5E00D0E7C9 /* NodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
+		86C4FED01AE34A9400D0E7C9 /* EdgeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeType.swift; sourceTree = "<group>"; };
+		86C4FED31AE34B3800D0E7C9 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		86C4FED41AE34B3800D0E7C9 /* BoxType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				86C4FEB51AE349AA00D0E7C9 /* AStarType.h */,
+				86C4FECC1AE34A1500D0E7C9 /* Graph.swift */,
+				86C4FECE1AE34A5E00D0E7C9 /* NodeType.swift */,
+				86C4FED01AE34A9400D0E7C9 /* EdgeType.swift */,
+				86C4FED21AE34B3200D0E7C9 /* Box */,
 				86C4FEB31AE349AA00D0E7C9 /* Supporting Files */,
 			);
 			path = AStarType;
@@ -100,6 +114,15 @@
 				86C4FEC11AE349AA00D0E7C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86C4FED21AE34B3200D0E7C9 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				86C4FED31AE34B3800D0E7C9 /* Box.swift */,
+				86C4FED41AE34B3800D0E7C9 /* BoxType.swift */,
+			);
+			name = Box;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C4FECD1AE34A1500D0E7C9 /* Graph.swift in Sources */,
+				86C4FED51AE34B3800D0E7C9 /* Box.swift in Sources */,
+				86C4FED11AE34A9400D0E7C9 /* EdgeType.swift in Sources */,
+				86C4FECF1AE34A5E00D0E7C9 /* NodeType.swift in Sources */,
+				86C4FED61AE34B3800D0E7C9 /* BoxType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +351,7 @@
 		86C4FEC71AE349AA00D0E7C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +361,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		86C4FEC81AE349AA00D0E7C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
